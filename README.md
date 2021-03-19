@@ -6,8 +6,11 @@ Nostalgia - The Free and Open Source Gaming Front-End
 
 # Installation
 Make sure you have NodeJS & NPM installed on your machine.
+<br>
 To check you can run `node --version` & `npm --version`.
+<br>
 Once the repo is cloned, run `npm install` to install dependencies.
+<br>
 When that is finished, run `npm run start` to start Nostalgia
 
 # Compiling
