@@ -23,10 +23,12 @@ is an alternative to already popular front-ends that already exist for the Windo
 Nostalgia currently allows both steam games and emulators to be imported. It's as simple as selecting `import roms`
 or `import steam game` in the file menu, adding the required files, and then launching your game. That's all you have to do. 
 Please note if you're importing a steam game to your collection you will need the AppID of that title. This can easily be 
-found for free on steam.db.info. Removing games is also straightforward as well. Just navigate to where Nostalgia is installed
-on your computer and locate the `/games` or `/steam/games` folder, and remove the data.json file. This will remove it from Nostalgia
+found for free on steam.db.info. 
 
 ![Alt Text](https://media3.giphy.com/media/hyJJeraLb0M0SvWffJ/giphy.gif)
+
+Removing games is also straightforward as well. Just navigate to where Nostalgia is installed
+on your computer and locate the `/games` or `/steam/games` folder, and remove the data.json file. This will remove it from Nostalgia
 
 # Features
 Currently Nostalgia supports both steam games and emulators as well. It has support for custom box art
