@@ -1,5 +1,5 @@
 # Nostalgia 
-Nostalgia - The Free and Open Source Gaming Front-End For Linux/MacOS
+Nostalgia - The Simple & Unopinionated Gaming Front-End
 <img width="32" height="32" src="https://i.imgur.com/UQz3tN9.png">
 <br>
 ![Alt Text](https://gbatemp.net/proxy.php?image=https%3A%2F%2Fmedia4.giphy.com%2Fmedia%2F3b5a9dVpTJFmfauiHc%2Fgiphy.gif&hash=368cdbdded067611ade69850b54b49a0)
@@ -14,10 +14,7 @@ Once the repo is cloned, run `npm install` to install dependencies.
 When that is finished, run `npm run start` to start Nostalgia
 
 # Compiling
-In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`.
-Please note windows is not currently supported. It may come at a later time but for the time
-being this is primarily intended primarily for Linux Gamers. In fact Nostalgia is an alternative to already popular 
-front-ends launchers that already exist for the Windows Platform.
+Currently both Linux and MacOS are supported. In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`.Windows support may come at a later time but for the time being it's not the main focus. In fact Nostalgia is an alternative to popular front-ends launchers that already exist for the Windows Platform.
 
 # Usage
 As you can see adding games to Nostalgia is very straight-forward and easy to do 👍
@@ -62,5 +59,7 @@ run npm start for some odd reason, however it doesn't seem to affect Nostalgia s
 `mGBA`
 <br>
 `FCEUX`
+<br>
+`Fusion`
 
 If you come across an emulator that doesn't work for whatever reason just submit an issue on Github and I will look into it. 
