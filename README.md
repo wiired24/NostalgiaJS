@@ -39,6 +39,4 @@ when adding your games. I personally recommend [SkyScraper](https://github.com/m
 
 # Why Nostalgia?
 Nostalgia was created as I wanted to create a viable open source alternative to something like launchbox that was built natively for
-linux. It was designed to be easy to use, customizeable, and above all fun. It's still very early in development so some things may occasionally
-break and it may not have every feature just yet. I do think at this point it's stable enough for general use. However you can expect
-various features and quality of life improvements to be continually added. 
+linux. Rather than trying to have every feature ever, It was designed to be minimal, easy to use, customizeable, and above all fun. It's still very early in development so some things may occasionally break and it may not have every feature just yet. I do think at this point it's stable enough for general use. However you can expect various features and bug fixes to be added. 
