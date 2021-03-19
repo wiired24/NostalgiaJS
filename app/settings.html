@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'
+    'unsafe-inline'">
+  <link rel="stylesheet" href="all.min.css">
+  <link rel="stylesheet" href="materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Settings</title>
+</head>
+<body style="background-color:mintcream">
+    <div class="container center-align">
+        <form id="settings">
+            <br>
+            <br>
+            <br>
+            <div style="transform: translateY(-45%);" class="file-field input-field">
+                <div class="btn">
+                  <span>Set Custom Background</span>
+                  <i class="material-icons">add_a_photo</i>
+                  <input type="file" id="bg-img" required>
+              </div>
+
+            <!--Display the name of the uploaded file-->
+         <div class="file-path-wrapper">
+        <input type="text" class="file-path validate" placeholder="Upload File">
+        </div>
+        </div>
+
+        <input style="transform: translateY(-45%);" type="submit" value="Update Settings" class="btn black">
+       </form>
+                
+
+</div>
+</body>
+<script src="materialize.min.js"></script>
+<script>
+        const path = require('path')
+        const os = require('os')
+        const { ipcRenderer } = require('electron')
+
+        const form = document.getElementById('settings')
+        const bg = document.getElementById('bg-img')
+        
+
+        // On submit, get the image, steamID, & video path
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+
+            
+            customBackgroundImg = bg.files[0].path
+
+            console.log(customBackgroundImg)
+          
+
+            
+        // This is for the JSON file that will be built and parsed later
+        let Settings = {
+          background:customBackgroundImg
+        }
+
+        // Parse gameData object into JSON for storing the file locally. 
+        let SettingsJSON = JSON.stringify(Settings)
+
+        // Send all relevant data about the game over to the main process
+        ipcRenderer.send('settings:add', {
+            SettingsJSON
+          })
+
+        })
+
+         // Might need this for later, unsure atm :|
+         ipcRenderer.on('settings:added', (e,args) => {
+            M.toast({
+           html: `Settings Updated successfully!`
+         })
+      })
+</script>
+</html>

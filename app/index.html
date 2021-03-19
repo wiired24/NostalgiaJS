@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'
+    'unsafe-inline'">
+  <link rel="stylesheet" href="all.min.css">
+  <link rel="stylesheet" href="materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+    <title>Nostalgia</title>
+</head>
+<body style="background-color:mintcream">
+<img style="position: fixed; z-index: -1;" src="bg.jpg" id="background" alt="">
+  
+</body>
+<!--<script src="Controller.min.js"></script>-->
+<script>window.$ = window.jQuery = require('jquery');</script>
+<script src="materialize.min.js"></script>
+<script>
+        const path = require('path')
+        const os = require('os')
+        const { ipcRenderer } = require('electron')
+        const recursive = require('recursive-readdir');
+        const {app,BrowserWindow} = require('electron')
+        let currentIndex = 0;
+
+window.addEventListener('DOMContentLoaded',(e) => {
+  console.log('working!!!')
+  ipcRenderer.send('steam-start', {
+    
+})
+
+ipcRenderer.send('settings-start', {
+
+})
+
+
+
+// Parses JSON file for a custom background and sets it if there is one on startup
+ipcRenderer.on('settings-start', (e,args) => {
+    const Settings = JSON.parse(args)
+    let bg = document.getElementById('background')
+    bg.setAttribute('src',Settings.background)
+})
+
+
+// Set background when updated from the GUI to show user background has changed
+ipcRenderer.on('settings:update',(e,args) => {
+  const Settings = JSON.parse(args.SettingsJSON)
+  let bg = document.getElementById('background')
+  bg.setAttribute('src',Settings.background)
+})
+
+
+/*Steam Specific Logic goes here*/  
+
+    // Split on each image path, and append all images to the page with foreach
+  ipcRenderer.on('steam-start', (e,args) => {
+  let new_arr = Array.from(args.split('\n'))
+  new_arr.forEach(element => {
+  const SteamGameFile = JSON.parse(element)
+  const SteamImage = document.createElement('img')
+  SteamImage.src = SteamGameFile.image;
+  SteamImage.setAttribute('width',175)
+  SteamImage.setAttribute('height',200)
+  SteamImage.classList.add('game-space')
+  document.body.appendChild(SteamImage)
+  console.log(element)
+
+var SteamVideoArray = [];
+// Add a video preview when a game title is being hovered over
+SteamImage.addEventListener('mouseover', e => {
+SteamImage.classList.add('pointer')
+const SteamVideoPreview = document.createElement('video')
+SteamVideoPreview.src = SteamGameFile.video;
+SteamVideoPreview.setAttribute('autoplay',true)
+SteamVideoPreview.width = 300;
+SteamVideoPreview.height = 300;
+SteamVideoPreview.classList.add('video-position')
+SteamVideoArray.push(SteamVideoPreview)
+console.log(SteamVideoArray)
+document.body.appendChild(SteamVideoPreview)
+
+//html5 - prevent simultaneous video playback - pauses other playing videos upon play
+$('audio,video').bind('play', function() {
+    activated = this;
+          $('audio,video').each(function() {
+              if(this != activated) this.remove();
+            });
+      $('video').on('ended',function(){
+      this.remove();
+    });
+  });
+
+
+}, {once:false}) 
+
+
+
+ // If game is launched, lets tell IPC Main about it
+ SteamImage.addEventListener('click', e => {
+  const SteamTitle = SteamGameFile.name
+  const SteamAppID = SteamGameFile.appID
+  const Steam = 'steam'
+  const SteamCommand = `steam://run/${SteamAppID}`
+ipcRenderer.send('steam-game:launch', {
+  SteamTitle,
+  SteamCommand,
+  Steam
+  
+      })
+    })
+   });
+  
+  })
+})
+
+/*Rom/Emulator specific logic starts here*/
+
+
+// On page load, let's load all of the users games 
+window.addEventListener('DOMContentLoaded', (e) => {
+    ipcRenderer.send('start', {
+    
+      
+    })
+
+
+    // Split on each image path, and append all images to the page with foreach
+    ipcRenderer.on('start', (e,args) => {
+      let new_arr = Array.from(args.split('\n'))
+      new_arr.forEach(element => {
+        const gamefile = JSON.parse(element)
+        const image = document.createElement('img')
+        image.src = gamefile.image;
+        image.setAttribute('width',175)
+        image.setAttribute('height',200)
+        image.classList.add('game-space')
+        document.body.appendChild(image)
+        console.log(element)
+    
+    var videoArray = [];
+    // Add a video preview when a game title is being hovered over
+    image.addEventListener('mouseover', e => {
+    image.classList.add('pointer')
+    const videoPreview = document.createElement('video')
+    videoPreview.src = gamefile.video;
+    videoPreview.setAttribute('autoplay',true)
+    videoPreview.setAttribute('width',285)
+    videoPreview.setAttribute('height',300)
+    videoPreview.classList.add('video-position')
+    videoArray.push(videoPreview)
+    currentIndex++;
+    console.log(videoArray)
+    document.body.appendChild(videoPreview)
+
+//html5 - prevent simultaneous video playback - pauses other playing videos upon play
+$('audio,video').bind('play', function() {
+    activated = this;
+          $('audio,video').each(function() {
+              if(this != activated) this.remove();
+            });
+      $('video').on('ended',function(){
+      this.remove();
+    });
+  });
+
+  
+  }, {once:false}) 
+
+
+
+  image.addEventListener('click', e => {
+    const romPath = gamefile.rom;
+    const emuPath = gamefile.emulator;
+    const wine = 'wine'
+    ipcRenderer.send('game:startup',{
+      romPath,
+      emuPath,
+      wine
+    })
+  })
+});
+      
+      
+    })
+})
+
+// Once the game has been added we want to create a game image from the image path that was 
+// recieved from args and append it to the mainwindow
+ipcRenderer.on('game:added', (e,args) => {
+  gameFile = JSON.parse(args.gameDataJSON)
+  const image = document.createElement('img')
+  image.src = gameFile.image
+  image.setAttribute('width',175)
+  image.setAttribute('height',200)
+  image.classList.add('game-space')
+  document.body.appendChild(image)
+
+  // If user clicks on a game image, lets send the name of the game back to IPC main where  
+  // it can be launched
+  image.addEventListener('click', e => {
+    const romPath = gameFile.rom
+    const emuPath = gameFile.emulator
+    const wine = 'wine'
+    ipcRenderer.send('game:launch', {
+      romPath,
+      emuPath,
+      wine
+      
+    })
+  })
+ 
+    // Add a video preview when a game title is being hovered over
+    image.addEventListener('mouseover', e => {
+    image.classList.add('pointer')
+    const videoPreview = document.createElement('video')
+    videoPreview.src = gameFile.video;
+    videoPreview.setAttribute('autoplay',true)
+    videoPreview.setAttribute('width',285)
+    videoPreview.setAttribute('height',300)
+    videoPreview.classList.add('video-position')
+    document.body.appendChild(videoPreview)
+
+//html5 - prevent simultaneous video playback - pauses other playing videos upon play
+$('audio,video').bind('play', function() {
+    activated = this;
+          $('audio,video').each(function() {
+              if(this != activated) this.remove();
+            });
+      $('video').on('ended',function(){
+      this.remove();
+    });
+  });
+
+
+   
+  }, {once:false}) 
+
+// Display notification alerting user that their game has been added
+         M.toast({
+           html: `${gameFile.name} added successfully!`
+         })
+       })
+
+  
+    ipcRenderer.on('steam-game:added', (e,args) => {
+      SteamGameFile = JSON.parse(args.SteamGameDataJSON)
+      const SteamImage = document.createElement('img')
+      SteamImage.src = SteamGameFile.image
+      SteamImage.setAttribute('width',175)
+      SteamImage.setAttribute('height',200)
+      SteamImage.classList.add('game-space')
+      document.body.appendChild(SteamImage)
+
+
+   // If game is launched, lets tell IPC Main about it
+    SteamImage.addEventListener('click', e => {
+      const SteamTitle = SteamGameFile.name
+      const SteamAppID = SteamGameFile.appID
+      const Steam = 'steam'
+      const SteamCommand = `steam://run/${SteamAppID}`
+    ipcRenderer.send('steam-game:launch', {
+      SteamTitle,
+      SteamCommand,
+      Steam
+      
+    })
+  })
+
+
+    // Add a video preview when a game title is being hovered over
+    var SteamVideoArray = [];
+    SteamImage.addEventListener('mouseover', e => {
+    SteamImage.classList.add('pointer')
+    const SteamVideoPreview = document.createElement('video')
+    SteamVideoPreview.src = SteamGameFile.video;
+    SteamVideoPreview.setAttribute('autoplay',true)
+    SteamVideoPreview.setAttribute('width',285)
+    SteamVideoPreview.setAttribute('height',300)
+    SteamVideoPreview.classList.add('video-position')
+    SteamVideoArray.push(SteamVideoPreview)
+    console.log(SteamVideoArray)
+    document.body.appendChild(SteamVideoPreview)
+
+//html5 - prevent simultaneous video playback - pauses other playing videos upon play
+$('audio,video').bind('play', function() {
+    activated = this;
+          $('audio,video').each(function() {
+              if(this != activated) this.remove();
+            });
+      $('video').on('ended',function(){
+      this.remove();
+    });
+  });
+
+    
+  }, {once:false}) 
+  
+
+})
+
+      
+</script>
+</html>

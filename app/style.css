@@ -1,0 +1,36 @@
+.container {
+	width: 400px;
+	margin-top: 70px;
+	padding: 0 20px;
+}
+
+.video-position {
+	margin-top: 190px;
+	padding: auto;
+	position:absolute; top: 200px; left: 950px;
+	
+}
+
+.game-space {
+	margin-left: 15px;
+}
+
+.about {
+	width: 100%;
+}
+
+.btn {
+	width: 100%;
+}
+
+.output {
+	margin-top: 40px;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+#output-path {
+	font-weight: bold;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'
+    'unsafe-inline'">
+  <link rel="stylesheet" href="all.min.css">
+  <link rel="stylesheet" href="materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Add Steam Game</title>
+</head>
+<body style="background-color:mintcream">
+    <div class="container center-align">
+    <form action="" id="steam-form">
+    
+    <!--Get the AppId for the steam game the user wishes to add-->
+    <div class="input-field col s6">
+    <i class="material-icons prefix">videogame_asset</i>
+    <input id="game-title" type="text" class="validate" placeholder="Game Title:">
+    </div> 
+    
+     <!--Get the AppId for the steam game the user wishes to add-->
+    <div class="input-field col s6">
+    <i class="material-icons prefix">info</i>
+    <input id="steamID" type="text" class="validate" placeholder="Enter the Steam App ID">
+    </div> 
+
+    <br>
+    <br>
+    <br>
+  
+       <!--Let user browse for image to use for Steam Game-->
+   <div style="transform: translateY(-45%);" class="file-field input-field">
+    <div class="btn">
+      <span>Add Game Image</span>
+      <i class="material-icons">add_a_photo</i>
+      <input type="file" id="img" required>
+  </div>
+
+      <!--Display the name of the uploaded file-->
+      <div class="file-path-wrapper">
+        <input type="text" class="file-path validate" placeholder="Upload File">
+        </div>
+    </div>
+
+        <!--Give them the option to upload a video preview -->
+   <div style="transform: translateY(-30%);" class="file-field input-field">
+    <div class="btn">
+      <span>Add Video Preview(Optional)</span>
+      <i class="material-icons">video_library</i>
+      <input type="file" id="vid">
+  </div>
+
+      <!--Display the name of the uploaded file-->
+      <div class="file-path-wrapper">
+        <input type="text" class="file-path validate" placeholder="Upload File">
+        </div>
+    </div>
+
+
+    <input style="transform: translateY(-45%);" type="submit" value="Add Steam Game to Nostalgia" class="btn black">
+    </form>
+
+</div>
+
+
+<script src="materialize.min.js"></script>
+<script>
+        const path = require('path')
+        const os = require('os')
+        const { ipcRenderer } = require('electron')
+
+        const form = document.getElementById('steam-form')
+        const steamAppID = document.getElementById('steamID')
+        const steamTitle = document.getElementById('game-title')
+        const imgFile = document.getElementById('img')
+        const vidFile = document.getElementById('vid')
+
+        // On submit, get the image, steamID, & video path
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+
+            gameAppID = steamAppID.value
+            gameTitle = steamTitle.value
+            imgPath = imgFile.files[0].path
+            videoPath = vidFile.files[0].path
+
+            console.log(gameAppID.value)
+            console.log(gameTitle.value)
+            console.log(imgPath)
+            console.log(videoPath)
+
+            
+        // This is for the JSON file that will be built and parsed later
+        let SteamGameData = {
+          name:gameTitle,
+          appID:gameAppID,
+          image:imgPath,
+          video:videoPath
+        }
+
+        // Parse gameData object into JSON for storing the file locally. 
+        let SteamGameDataJSON = JSON.stringify(SteamGameData)
+
+        // Send all relevant data about the game over to the main process
+        ipcRenderer.send('steam-game:add', {
+            SteamGameDataJSON
+          })
+
+
+          ipcRenderer.on('steam-game:added', (e,args) => {
+         // Send a notification alerting the user that their game has been added succesfully
+         let SteamGameFile = JSON.parse(SteamGameDataJSON)
+         M.toast({
+           html: `${SteamGameFile.name} added successfully!`
+         })
+      })
+           
+  })
+
+   
+        
+</script>
+</body>
+</html>
+
+        

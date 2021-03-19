@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'
+    'unsafe-inline'">
+  <link rel="stylesheet" href="all.min.css">
+  <link rel="stylesheet" href="materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Import Rom</title>
+</head>
+<body style="background-color:mintcream">
+    <div class="container center-align">
+    <form action="" id="game-form">
+    
+     
+    <!--Let user browse for a rom file with the HTML file input-->
+    <div style="transform: translateY(-30%);" class="file-field input-field">
+      <div class="btn">
+        <span>Browse Rom</span>
+        <i class="material-icons">videogame_asset</i>
+        <input type="file" id="rom" required>
+    </div>
+
+
+    <!--Display the name of the uploaded file-->
+    <div class="file-path-wrapper">
+        <input type="text" class="file-path validate" placeholder="Upload File">
+        </div>
+    </div>
+
+    <br>
+    <br>
+   <!--Let user browse for Emulator to use for rom file-->
+   <div style="transform: translateY(-65%);" class="file-field input-field">
+    <div class="btn">
+      <span>Browse Emulator</span>
+      <i class="material-icons">memory</i>
+      <input type="file" id="emu-launcher" required>
+  </div>
+
+      <!--Display the name of the uploaded file-->
+      <div class="file-path-wrapper">
+        <input type="text" class="file-path validate" placeholder="Upload File">
+        </div>
+    </div>
+
+       <!--Let user browse for image to use for rom file-->
+   <div style="transform: translateY(-45%);" class="file-field input-field">
+    <div class="btn">
+      <span>Add Game Image</span>
+      <i class="material-icons">add_a_photo</i>
+      <input type="file" id="img" required>
+  </div>
+
+      <!--Display the name of the uploaded file-->
+      <div class="file-path-wrapper">
+        <input type="text" class="file-path validate" placeholder="Upload File">
+        </div>
+    </div>
+
+        <!--Give them the option to upload a video preview -->
+   <div style="transform: translateY(-30%);" class="file-field input-field">
+    <div class="btn">
+      <span>Add Video Preview</span>
+      <i class="material-icons">video_library</i>
+      <input type="file" id="vid" required>
+  </div>
+
+      <!--Display the name of the uploaded file-->
+      <div class="file-path-wrapper">
+        <input type="text" class="file-path validate" placeholder="Upload File">
+        </div>
+    </div>
+
+
+    <input style="transform: translateY(-45%);" type="submit" value="Add Rom to Nostalgia" class="btn black">
+    </form>
+
+</div>
+<script src="materialize.min.js"></script>
+<script>
+        const path = require('path')
+        const os = require('os')
+        const { ipcRenderer } = require('electron')
+
+        const form = document.getElementById('game-form')
+        const romFile = document.getElementById('rom')
+        const emuFile = document.getElementById('emu-launcher')
+        const imgFile = document.getElementById('img')
+        const vidFile = document.getElementById('vid')
+
+        // On submit, get the image,rom, emulator paths
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+
+            romPath = romFile.files[0].path
+            emuPath = emuFile.files[0].path
+            imgPath = imgFile.files[0].path
+            imageFile = imgFile.files[0]
+            videoPath = vidFile.files[0].path
+
+            
+        // Extract the raw name of the game from rompath using split to remove .file-extension     
+        let gameString = romPath;
+        let gameArray = gameString.split('.');
+        let name = gameArray[0];
+        let finalString = name
+        let finalArray = finalString.split('/');
+        let gameName = finalArray[finalArray.length - 1]
+        console.log(gameName)
+        
+        // gameData conatins every neccessary data point about each game. Such as name, rompath etc
+        let gameData = {
+          name:gameName,
+          rom:romPath,
+          emulator:emuPath,
+          image:imgPath,
+          video:videoPath
+        }
+
+        // Parse gameData object into JSON for storing the file locally. 
+        let gameDataJSON = JSON.stringify(gameData)
+            // Send all relevant data about the game over to the main process
+            ipcRenderer.send('game:add', {
+                gameName,
+                gameDataJSON
+                
+            })
+
+        // Send a notification alerting the user that their game has been added succesfully
+        let gameFile = JSON.parse(gameDataJSON)
+         M.toast({
+           html: `${gameFile.name} added successfully!`
+         })
+
+        })
+
+        
+        // Might need this for later, unsure atm :|
+        ipcRenderer.on('game:added', (e,args) => {
+        
+       })
+
+</script>
+</body>
+</html>
