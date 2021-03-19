@@ -32,7 +32,7 @@ on your computer and locate the `/games` or `/steam/games` folder, and remove th
 Currently Nostalgia supports both steam games and emulators as well. It has support for custom box art
 and video previews. If you have a larger collection of rom files it's recommended to use a scraper to fetch
 media files for you games. These can then be used by Nostalgia when adding your games. I personally recommend
-SkyScraper but your mileage may vary. 
+[SkyScraper](https://github.com/muldjord/skyscraper) but your mileage may vary. 
 
 ![Alt Text](https://i.imgur.com/by30Sxd.png)
 
