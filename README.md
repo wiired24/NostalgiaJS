@@ -43,3 +43,24 @@ when adding your games. I personally recommend [SkyScraper](https://github.com/m
 
 # Why Nostalgia?
 Nostalgia was created as I wanted to create a viable open source alternative for those looking for an experience that is similar to something like launchbox on windows, that was instead built natively for the linux desktop. Rather than trying to have every feature ever, It was designed to be minimal, easy to use, customizeable, and above all fun. It's still very early in development so some things may occasionally break and it may not have every feature just yet. I do think at this point it's stable enough for general use. However you can expect various features and bug fixes to be added. 
+
+# Troubleshooting
+If you get a weird error that goes something like `Javascript Error! Map is not defined` don't worry it seems to pop up when you first
+run npm start for some odd reason, however it doesn't seem to affect Nostalgia so you can ignore this error if you happen to get it. While I have
+made an effort to test as much as I can, I haven't been able to test every emulator that's out there. So far the ones I know work are the following.
+<br>
+`Snex9x`
+<br>
+`PPSSPP`
+<br>
+`PCSX2`
+<br>
+`Mupen64`
+<br>
+`Dolphin`
+<br>
+`mGBA`
+<br>
+`FCEUX`
+
+If you come across an emulator that doesn't work for whatever reason just submit an issue on Github and I will look into it. 
