@@ -49,6 +49,7 @@ If you get a weird error that goes something like `Javascript Error! Map is not 
 run npm start for some odd reason, however it doesn't seem to affect Nostalgia so you can ignore this error if you happen to get it. While I have
 made an effort to test as much as I can, I haven't been able to test every emulator that's out there. So far the ones I know work are the following.
 <br>
+<br>
 `Snex9x`
 <br>
 `PPSSPP`
