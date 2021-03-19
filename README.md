@@ -46,8 +46,7 @@ Nostalgia was created as I wanted to create a viable open source alternative for
 
 # Troubleshooting
 If you get a weird error that goes something like `Javascript Error! Map is not defined` don't worry it seems to pop up when you first
-run npm start for some odd reason, however it doesn't seem to affect Nostalgia so you can ignore this error if you happen to get it. While I have
-made an effort to test as much as I can, I haven't been able to test every emulator that's out there. So far the ones I know work are the following.
+run npm start for some odd reason, however it doesn't seem to affect Nostalgia so you can ignore this error if you happen to get it. While the vast majority of emulators should work, I haven't been able to test every emulator that's out there. So far the ones I know work are the following.
 <br>
 <br>
 `Snex9x`
