@@ -24,7 +24,7 @@
         const { ipcRenderer } = require('electron')
         const recursive = require('recursive-readdir');
         const {app,BrowserWindow} = require('electron')
-        let currentIndex = 0;
+
 
 window.addEventListener('DOMContentLoaded',(e) => {
   console.log('working!!!')
@@ -69,6 +69,7 @@ ipcRenderer.on('settings:update',(e,args) => {
   document.body.appendChild(SteamImage)
   console.log(element)
 
+  
 var SteamVideoArray = [];
 // Add a video preview when a game title is being hovered over
 SteamImage.addEventListener('mouseover', e => {
@@ -152,7 +153,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
     videoPreview.setAttribute('height',300)
     videoPreview.classList.add('video-position')
     videoArray.push(videoPreview)
-    currentIndex++;
     console.log(videoArray)
     document.body.appendChild(videoPreview)
 
