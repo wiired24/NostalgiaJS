@@ -15,7 +15,8 @@ When that is finished, run `npm run start` to start Nostalgia
 
 # Compiling
 In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`.
-Please note windows support is not currently 100% implemented. 
+Please note windows support is not currently 100% implemented. It may come at a later time but for the time
+being this is primarily intended for Linux and other UNIX Like Operating Systems like MacOS. 
 
 # Usage
 Nostalgia currently allows both steam games and emulators to be imported. It's as simple as selecting `import roms`
