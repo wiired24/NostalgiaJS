@@ -31,15 +31,14 @@ Removing games is also straightforward as well. Just navigate to where Nostalgia
 on your computer and locate the `/games` or `/steam/games` folder, and remove the data.json file. This will remove it from Nostalgia
 
 # Features
-Currently Nostalgia supports both steam games and emulators as well. It has support for custom box art
-and video previews. If you have a larger collection of rom files it's recommended to use a scraper to fetch
-media files for you games. These can then be used by Nostalgia when adding your games. I personally recommend
-[SkyScraper](https://github.com/muldjord/skyscraper) but your mileage may vary. 
+Currently Nostalgia supports both steam games and emulators as well. Emulators can be either native linux/macOS versions or you can also
+use Windows .exe files as Wine is supported by default just make sure you have it installed. It also has support for custom box art and video previews. If you have a larger collection of rom files it's recommended to use a scraper to fetch media files for you games. These can then be used by Nostalgia 
+when adding your games. I personally recommend [SkyScraper](https://github.com/muldjord/skyscraper) but your mileage may vary. 
 
 ![Alt Text](https://i.imgur.com/by30Sxd.png)
 
 # Why Nostalgia?
 Nostalgia was created as I wanted to create a viable open source alternative to something like launchbox that was built natively for
-linux. It was designed to be easy to use, customizeable, and above all fun. It's still very early in development so it may not
-have every feature under the sun just yet. I do think at this point it's stable enough for general use. However you can expect
-various features and quality of life improvements to be added soon. 
+linux. It was designed to be easy to use, customizeable, and above all fun. It's still very early in development so some things may occasionally
+break and it may not have every feature just yet. I do think at this point it's stable enough for general use. However you can expect
+various features and quality of life improvements to be continually added. 
