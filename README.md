@@ -16,8 +16,8 @@ When that is finished, run `npm run start` to start Nostalgia
 # Compiling
 In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`.
 Please note windows support is not currently 100% implemented. It may come at a later time but for the time
-being this is primarily intended for Linux and other UNIX Like Operating Systems like MacOS. In fact Nostalgia
-is an alternative to already popular front-ends that already exist for the Windows Platform.
+being this is primarily intended primarily for Linux Gamers. In fact Nostalgia is an alternative to already popular 
+front-ends launchers that already exist for the Windows Platform.
 
 # Usage
 As you can see adding games to Nostalgia is very straight-forward and easy to do 👍
