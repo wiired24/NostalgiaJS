@@ -20,7 +20,7 @@ being this is primarily intended for Linux and other UNIX Like Operating Systems
 is an alternative to already popular front-ends that already exist for the Windows Platform.
 
 # Usage
-Nostalgia currently allows both steam games and emulators to be imported. It's as simple as selecting `import roms`
+Nostalgia currently allows both steam games and emulators to be imported. It's as simple as selecting `import rom`
 or `import steam game` in the file menu, adding the required files, and then launching your game. That's all you have to do. 
 Please note if you're importing a steam game to your collection you will need the AppID of that title. This can easily be 
 found for free on steam.db.info. 
