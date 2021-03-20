@@ -316,7 +316,7 @@ function loadConfig({romPath,emuPath,wine,Retroarch}) {
         });
     }
 
-    if (1 == 1) {console.log(5000)}
+    
     // If launching a Retroarch Libretro core let's do this
     if (executablePath.includes('libretro')) {
         console.log('working...')
