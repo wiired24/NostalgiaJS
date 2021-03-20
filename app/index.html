@@ -67,7 +67,7 @@ ipcRenderer.on('settings:update',(e,args) => {
   SteamImage.setAttribute('height',200)
   SteamImage.classList.add('game-space')
   document.body.appendChild(SteamImage)
-  console.log(element)
+  
 
   
 var SteamVideoArray = [];
@@ -81,7 +81,6 @@ SteamVideoPreview.width = 300;
 SteamVideoPreview.height = 300;
 SteamVideoPreview.classList.add('video-position')
 SteamVideoArray.push(SteamVideoPreview)
-console.log(SteamVideoArray)
 document.body.appendChild(SteamVideoPreview)
 
 
@@ -132,7 +131,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     // Split on each image path, and append all images to the page with foreach
     ipcRenderer.on('start', (e,args) => {
-      console.log(args)
       let new_arr = Array.from(args.split('\n'))
       new_arr.forEach(element => {
         const gamefile = JSON.parse(element)
@@ -142,7 +140,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
         image.setAttribute('height',200)
         image.classList.add('game-space')
         document.body.appendChild(image)
-        console.log(element)
     
     var videoArray = [];
     // Add a video preview when a game title is being hovered over
@@ -155,7 +152,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
     videoPreview.setAttribute('height',300)
     videoPreview.classList.add('video-position')
     videoArray.push(videoPreview)
-    console.log(videoArray)
     document.body.appendChild(videoPreview)
 
 //html5 - prevent simultaneous video playback - pauses other playing videos upon play
@@ -284,7 +280,6 @@ $('audio,video').bind('play', function() {
     SteamVideoPreview.setAttribute('height',300)
     SteamVideoPreview.classList.add('video-position')
     SteamVideoArray.push(SteamVideoPreview)
-    console.log(SteamVideoArray)
     document.body.appendChild(SteamVideoPreview)
 
 

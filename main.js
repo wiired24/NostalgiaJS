@@ -233,7 +233,7 @@ ipcMain.on('settings:add', (e,args) => {
 
 ipcMain.on('settings-start',(e,args) => {
     recursive(`${__dirname}/settings`,function(err,files) {
-        console.log(files)
+        
 
         // Map over every file & read contents
         files.map(function(gamePath) {
@@ -241,7 +241,7 @@ ipcMain.on('settings-start',(e,args) => {
             lineReader.eachLine(gamePath,function(line,last) {
                
                 
-                console.log(line)
+                
                 mainWindow.webContents.send('settings-start',line)
             })
         }
@@ -254,7 +254,7 @@ ipcMain.on('settings-start',(e,args) => {
 // currently saved and send it to the render process so they can be appended to the DOM
 ipcMain.on('start', (e,args) => {
     recursive(`${__dirname}/games`,function(err,files) {
-        console.log(files)
+        
 
         // Map over every file & read contents
         files.map(function(gamePath) {
@@ -262,7 +262,7 @@ ipcMain.on('start', (e,args) => {
             lineReader.eachLine(gamePath,function(line,last) {
                
                 
-                console.log(line)
+                
                 mainWindow.webContents.send('start',line)
             })
         }
@@ -275,7 +275,7 @@ ipcMain.on('start', (e,args) => {
 // steam files to the render process to then be iterated over and processed on the page.
 ipcMain.on('steam-start', (e,args) => {
     recursive(`${__dirname}/steam/games`,function(err,files) {
-        console.log(files)
+        
 
         // Map over every file & read contents
         files.map(function(gamePath) {
@@ -283,7 +283,7 @@ ipcMain.on('steam-start', (e,args) => {
             lineReader.eachLine(gamePath,function(line,last) {
                
                 
-                console.log(line)
+                
                 mainWindow.webContents.send('steam-start',line)
             })
         }
