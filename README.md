@@ -14,7 +14,8 @@ Once the repo is cloned, run `npm install` to install dependencies.
 When that is finished, run `npm run start` to start Nostalgia
 
 # Release Builds
-Currently both Linux and MacOS are supported. In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`.Windows support may come at a later time but for the time being it's not the main focus. In fact Nostalgia is an alternative to popular front-ends launchers that already exist for the Windows Platform.
+Currently both Linux and MacOS are supported. In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`. After compiling is finished you will see a new directory called 
+`/release-builds` there you can find binaries for your target platform. Please note that although Windows support may come at a later time, for the time being it's not the main focus. In fact Nostalgia is an alternative to popular front-ends launchers that already exist for the Windows Platform.
 
 # Usage
 As you can see adding games to Nostalgia is very straight-forward and easy to do 👍
