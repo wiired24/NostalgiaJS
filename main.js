@@ -295,11 +295,16 @@ ipcMain.on('steam-start', (e,args) => {
 
 
 // loadconfig calls child. Child takes the rompath/emuPath and launches the executable
-function loadConfig({romPath,emuPath,wine}) {
+function loadConfig({romPath,emuPath,wine,Retroarch}) {
     let executablePath = emuPath;
     let parameters = [romPath]
     let winePath = [emuPath,romPath];
     let launchWithWine = wine;
+    let laucnhWithRetroarch = 'retroarch';
+    let launch = '-L'
+    let RetroarchPath = [launch,emuPath,romPath]
+
+    
 
     // If platform is Linux, let's support launching emulators via WINE
     if (onLinux && executablePath.includes('.exe')) {
@@ -309,8 +314,22 @@ function loadConfig({romPath,emuPath,wine}) {
             }
             console.log(data.toString());
         });
-    } 
+    }
 
+    if (1 == 1) {console.log(5000)}
+    // If launching a Retroarch Libretro core let's do this
+    if (executablePath.includes('libretro')) {
+        console.log('working...')
+        //console.log(combinedPath)
+        child(laucnhWithRetroarch,RetroarchPath, function(err,data) {
+            if(err) {
+                console.log(err)
+            }
+            console.log(data.toString());
+        });
+    }
+
+    // Default agrs is just emulator path -> RomPath
     child(executablePath,parameters, function(err,data){
         if(err) {
             console.log(err);

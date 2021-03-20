@@ -175,10 +175,12 @@ $('audio,video').bind('play', function() {
     const romPath = gamefile.rom;
     const emuPath = gamefile.emulator;
     const wine = 'wine'
+    const Retroarch = 'retroarch -L'
     ipcRenderer.send('game:startup',{
       romPath,
       emuPath,
-      wine
+      wine,
+      Retroarch
     })
   })
 });
@@ -204,10 +206,12 @@ ipcRenderer.on('game:added', (e,args) => {
     const romPath = gameFile.rom
     const emuPath = gameFile.emulator
     const wine = 'wine'
+    const Retroarch = 'retroarch -L'
     ipcRenderer.send('game:launch', {
       romPath,
       emuPath,
-      wine
+      wine,
+      Retroarch
       
     })
   })
