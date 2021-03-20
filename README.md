@@ -13,7 +13,7 @@ Once the repo is cloned, run `npm install` to install dependencies.
 <br>
 When that is finished, run `npm run start` to start Nostalgia
 
-# Compiling
+# Release Builds
 Currently both Linux and MacOS are supported. In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`.Windows support may come at a later time but for the time being it's not the main focus. In fact Nostalgia is an alternative to popular front-ends launchers that already exist for the Windows Platform.
 
 # Usage
@@ -39,7 +39,7 @@ when adding your games. I personally recommend [SkyScraper](https://github.com/m
 ![Alt Text](https://i.imgur.com/by30Sxd.png)
 
 # Why Nostalgia?
-Nostalgia was created as I wanted to create a viable open source alternative for those looking for an experience that is similar to something like launchbox on windows, that was instead built natively for the linux desktop. Rather than trying to have every feature ever, It was designed to be minimal, easy to use, customizeable, and above all fun. It's still very early in development so some things may occasionally break and it may not have every feature just yet. I do think at this point it's stable enough for general use. However you can expect various features and bug fixes to be added. 
+Nostalgia was created as I wanted to create a viable open source alternative for those looking for an experience that is similar to something like launchbox on windows, that was instead built natively for the linux/Unix desktop. Rather than trying to have every feature ever, It was designed to be minimal, easy to use, customizeable, and above all fun. It's still very early in development so some things may occasionally break and it may not have x feature impleneted yet. I do think at this point it's stable enough for general use. However you can expect various features and bug fixes to be added as development continues. 
 
 # Troubleshooting
 If you get a weird error that goes something like `Javascript Error! Map is not defined` don't worry it seems to pop up when you first

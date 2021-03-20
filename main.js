@@ -318,6 +318,7 @@ function loadConfig({romPath,emuPath,wine}) {
         }
         console.log(data.toString());
     });
+
 }
 
 function loadSteamConfig({Steam,SteamTitle,SteamCommand}) {
