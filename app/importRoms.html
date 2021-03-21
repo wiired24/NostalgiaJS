@@ -16,7 +16,11 @@
     <div class="container center-align">
     <form action="" id="game-form">
     
-     
+      <div class="input-field col s6">
+        <i class="material-icons prefix">videogame_asset</i>
+        <input id="game-title" type="text" class="validate" placeholder="Game Title:">
+      </div>
+
     <!--Let user browse for a rom file with the HTML file input-->
     <div style="transform: translateY(-30%);" class="file-field input-field">
       <div class="btn">
@@ -92,6 +96,7 @@
         const emuFile = document.getElementById('emu-launcher')
         const imgFile = document.getElementById('img')
         const vidFile = document.getElementById('vid')
+        const gameTitle = document.getElementById('game-title')
 
         // On submit, get the image,rom, emulator paths
         form.addEventListener('submit', e => {
@@ -110,7 +115,8 @@
         let name = gameArray[0];
         let finalString = name
         let finalArray = finalString.split('/');
-        let gameName = finalArray[finalArray.length - 1]
+        //let gameName = finalArray[finalArray.length - 1]
+        let gameName = gameTitle.value
         
         // gameData conatins every neccessary data point about each game. Such as name, rompath etc
         let gameData = {
