@@ -8,7 +8,7 @@ echo -e "                                                                   "
 
 
 
-echo "This tool will help you scrape media files for your Nostalgia games."
+echo "This tool will help you scrape media files for your NostalgiaJS games."
 echo "Please input the path that you would like to scrape now"
 read pathname
 echo "Please input the platform name. For example snes or ps1"
