@@ -34,9 +34,7 @@ on your computer and locate the `/games` or `/steam/games` folder, and remove th
 
 # Features
 Currently Nostalgia supports both steam games and emulators as well. Nostalgia has `built in support` for both standalone emulator binaries and `libretro retroarch cores` as well. In addtion, you can also
-use Windows .exe files for standalone emulators as Wine is supported by default just make sure you have it installed. It also has support for `custom box art` and `video previews`. If you have a larger collection of rom files it's recommended to use a scraper to fetch media files for you games. These can then be used by Nostalgia 
-when adding your games. I personally recommend [Skraper](https://www.skraper.net/) but you can use whatever 
-scraper you want. 
+use Windows .exe files for standalone emulators as Wine is supported by default just make sure you have it installed. It also has support for `custom box art` and `video previews`. If you have a larger collection of rom files it's recommended to use a scraper to fetch media files for you games. These can then be used by Nostalgia when adding your games. I personally recommend [SkyScraper](https://github.com/muldjord/skyscraper) but you can use whatever scraper you want. 
 
 ![Alt Text](https://i.imgur.com/by30Sxd.png)
 

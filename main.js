@@ -316,6 +316,16 @@ function loadConfig({romPath,emuPath,wine,Retroarch}) {
         });
     }
 
+     // If platform is MacOS, let's support launching emulators via WINE
+     if (onMac && executablePath.includes('.exe')) {
+        child(launchWithWine,winePath, function(err,data) {
+            if(err) {
+                console.log(err)
+            }
+            console.log(data.toString());
+        });
+    }
+
     
     // If launching a Retroarch Libretro core let's do this
     if (executablePath.includes('libretro')) {
