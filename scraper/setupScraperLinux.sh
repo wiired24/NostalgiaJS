@@ -5,4 +5,5 @@ cd
 mkdir skysource
 cd skysource
 wget -q -O - https://raw.githubusercontent.com/muldjord/skyscraper/master/update_skyscraper.sh | bash
+cd ..
 echo "Scraper has been installed. You can now run scrape.sh to start scraping"
