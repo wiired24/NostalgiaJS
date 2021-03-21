@@ -37,10 +37,7 @@ Currently Nostalgia supports both steam games and emulators as well. Nostalgia h
 use Windows .exe files for standalone emulators as Wine is supported by default just make sure you have it installed. It also has support for `custom box art` and `video previews`. 
 
 # Scraping 
-If you have a larger collection of rom files it's recommended to use a scraper to fetch media files for you games. In which case you can take advantage of the default scraper that Nostalgia has to offer. Just run the
-`setupScraper` script once to install dependencies and then you only need to run `scrape.sh` when you
-want to scrape metadata for your games. A media folder will be created containing images and videos
-for your games after scraping has finished.
+If you have a larger collection of rom files it's recommended to use a scraper to fetch media files for you games. In which case you can take advantage of the default scraper (skyscraper) that Nostalgia has to offer. Just run the `setupScraper` script once to install dependencies and then you only need to run `scrape.sh` when you want to scrape metadata for your games. A media folder will be created containing images and videos for your games after scraping has finished.
 
 ![Alt Text](https://i.imgur.com/by30Sxd.png)
 

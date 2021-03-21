@@ -14,4 +14,5 @@ read pathname
 echo "Please input the platform name. For example snes or ps1"
 read platformname
 Skyscraper -p $platformname -i $pathname --flags videos
-echo "All Done...."
+echo "All Done.... Check" $pathname
+echo "for your media files"
