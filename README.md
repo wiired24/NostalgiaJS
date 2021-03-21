@@ -44,23 +44,4 @@ scraper you want.
 Nostalgia was created as I wanted to create a viable open source alternative for those looking for an experience that is similar to something like launchbox on windows, that was instead built natively for the linux/Unix desktop. Rather than trying to have every feature ever, It was designed to be minimal, easy to use, customizeable, and above all fun. It's still very early in development so some things may occasionally break and it may not have x feature impleneted yet. I do think at this point it's stable enough for general use. However you can expect various features and bug fixes to be added as development continues. 
 
 # Troubleshooting
- While the vast majority of emulators should work, I haven't been able to test every emulator that's out there. So far the ones I know work are the following.
-<br>
-<br>
-`Snex9x`
-<br>
-`PPSSPP`
-<br>
-`PCSX2`
-<br>
-`Mupen64`
-<br>
-`Dolphin`
-<br>
-`mGBA`
-<br>
-`FCEUX`
-<br>
-`Fusion`
-
-If you come across an emulator that doesn't work for whatever reason just submit an issue on Github and I will look into it. 
+While Nostalgia is generally considered stable enough for use at this point, if you do come across a bug please let me know about it by submitting an issue on Github and I will look into it. Some common things to be aware of. If you're launching a game on mac or linux that requires a .exe emulator file, make sure you have wine installed on your machine. If you are loading a libretro core, make sure that you have the proper file which should be a `<platform-name>libretro.so file` and that you have retroarch installed on your machine. If you're using a standalone emulator binary to launch a rom, and the emulator won't launch or doesn't start it may just be an issue with that specific emulator in which case I'd recommend trying the libretro core equivalent instead. 
