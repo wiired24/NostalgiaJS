@@ -1,5 +1,5 @@
 # NostalgiaJS 
-NostalgiaJS - The Simple,Unopinionated, Open Source Gaming Front-End
+NostalgiaJS - The Fast,simple, Open Source Gaming Front-End
 <img width="32" height="32" src="https://i.imgur.com/UQz3tN9.png">
 <br>
 ![Alt Text](https://gbatemp.net/proxy.php?image=https%3A%2F%2Fmedia4.giphy.com%2Fmedia%2F3b5a9dVpTJFmfauiHc%2Fgiphy.gif&hash=368cdbdded067611ade69850b54b49a0)
@@ -39,7 +39,7 @@ If you have a larger collection of rom files it's recommended to use a scraper t
 ![Alt Text](https://i.imgur.com/by30Sxd.png)
 
 # Why NostalgiaJS?
-NostalgiaJS was created as I wanted to create a viable open source alternative for those looking for an experience that is similar to something like launchbox on windows, that was instead built natively for the linux/Unix desktop. Rather than trying to have every feature ever, It was designed to be minimal, easy to use, customizeable, and above all fun. It's still very early in development so some things may occasionally break and it may not have x feature impleneted yet. I do think at this point it's stable enough for general use. However you can expect various features and bug fixes to be added as development continues. 
+NostalgiaJS was created as I wanted to create a viable open source alternative for those looking for an experience that is similar to something like launchbox on windows, that was instead built natively for the linux/Unix desktop. Rather than trying to have every feature ever, It was designed to be minimal, fast, easy to use, customizeable, and above all fun. It's still early in development so some things may occasionally break and it may not have x feature impleneted yet. I do think at this point it's stable enough for general use. However you can expect various features and bug fixes to be added as development continues. 
 
 # Troubleshooting
 While NostalgiaJS is generally considered stable enough for use at this point, if you do come across a bug please let me know about it by submitting an issue on Github and I will look into it. Some common things to be aware of. If you're launching a game on mac or linux that requires a .exe emulator file, make sure you have wine installed on your machine. If you are loading a libretro core, make sure that you have the proper file which should be a `<platform-name>libretro.so file` and that you have retroarch installed on your machine. If you're using a standalone emulator binary to launch a rom, and the emulator won't launch or doesn't start it may just be an issue with that specific emulator in which case I'd recommend trying the libretro core equivalent instead. 
