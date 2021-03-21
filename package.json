@@ -1,11 +1,11 @@
 {
   "name": "nostalgia",
   "version": "1.0.0",
-  "description": "Nostalgia is a free and open source game launcher",
+  "description": "NostalgiaJS is a free and open source game launcher",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "package-win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --icon=assets/icons/Icon_256x256.png --prune=false --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Nostalgia\"",
+    "package-win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --icon=assets/icons/Icon_256x256.png --prune=false --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"NostalgiaJS\"",
     "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=assets/icons/Icon_256x256.png --prune=false --out=release-builds",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=false --out=release-builds"
   },

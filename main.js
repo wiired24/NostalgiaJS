@@ -31,7 +31,7 @@ let mainWindow;
 function createMainWindow() {
     const { width, height } = screen.getPrimaryDisplay().workAreaSize
     mainWindow = new BrowserWindow({
-        title: `Nostalgia`,
+        title: `NostalgiaJS`,
         width: 1280,
         height: 720,
         icon: `${__dirname}/assets/icons/Icon_256x256.png`,
