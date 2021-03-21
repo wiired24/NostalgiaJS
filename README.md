@@ -33,7 +33,7 @@ Removing games is also straightforward as well. Just navigate to where Nostalgia
 on your computer and locate the `/games` or `/steam/games` folder, and remove the data.json file. This will remove it from Nostalgia
 
 # Features
-Currently Nostalgia supports both steam games and emulators as well. Nostalgia has `built in support` for both standalone emulator binaries and `libretro retroarch cores` as well. In addtion, you can also
+Currently Nostalgia supports both steam games and emulators as well. Nostalgia has `built in support` for both standalone emulator binaries and `libretro retroarch cores` as well. Nostalgia comes with some of the most popular libretro cores already included by default. Just search in `/Nostalgia/libretro/cores` when importing your rom file to your collection. In addtion, you can also
 use Windows .exe files for standalone emulators as Wine is supported by default just make sure you have it installed. It also has support for `custom box art` and `video previews`. 
 
 # Scraping 
