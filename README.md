@@ -2,7 +2,7 @@
 NostalgiaJS - The Fast,Simple, Open Source Gaming Front-End
 <img width="32" height="32" src="https://i.imgur.com/UQz3tN9.png">
 <br>
-![Alt Text](https://gbatemp.net/proxy.php?image=https%3A%2F%2Fmedia4.giphy.com%2Fmedia%2F3b5a9dVpTJFmfauiHc%2Fgiphy.gif&hash=368cdbdded067611ade69850b54b49a0)
+![Alt Text](https://media2.giphy.com/media/05ImeYoOwKVdw2S7b7/giphy.gif)
 
 # Installation
 Make sure you have NodeJS & NPM installed on your machine.
