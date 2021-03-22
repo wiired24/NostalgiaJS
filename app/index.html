@@ -22,7 +22,20 @@
         const os = require('os')
         const { ipcRenderer } = require('electron')
         const recursive = require('recursive-readdir');
-        const {app,BrowserWindow} = require('electron')
+        const {app,BrowserWindow} = require('electron');
+
+  // Global Func, stops video playback for all other videos that aren't selected.
+  function oneVideoAtATimePlease() {
+  $('audio,video').bind('play', function() {
+    activated = this;
+          $('audio,video').each(function() {
+              if(this != activated) this.remove();
+            });
+      $('video').on('ended',function(){
+      this.remove();
+    });
+  });
+}
 
 
 
@@ -84,15 +97,7 @@ document.body.appendChild(SteamVideoPreview)
 
 
 //html5 - prevent simultaneous video playback - pauses other playing videos upon play
-$('audio,video').bind('play', function() {
-    activated = this;
-          $('audio,video').each(function() {
-              if(this != activated) this.remove();
-            });
-      $('video').on('ended',function(){
-      this.remove();
-    });
-  });
+oneVideoAtATimePlease();
 
 
 }, {once:false}) 
@@ -154,16 +159,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     document.body.appendChild(videoPreview)
 
 //html5 - prevent simultaneous video playback - pauses other playing videos upon play
-$('audio,video').bind('play', function() {
-    activated = this;
-          $('audio,video').each(function() {
-              if(this != activated) this.remove();
-            });
-      $('video').on('ended',function(){
-      this.remove();
-    });
-  });
-
+oneVideoAtATimePlease();
 
 
   }, {once:false}) 
@@ -227,15 +223,7 @@ ipcRenderer.on('game:added', (e,args) => {
     document.body.appendChild(videoPreview)
 
 //html5 - prevent simultaneous video playback - pauses other playing videos upon play
-$('audio,video').bind('play', function() {
-    activated = this;
-          $('audio,video').each(function() {
-              if(this != activated) this.remove();
-            });
-      $('video').on('ended',function(){
-      this.remove();
-    });
-  });
+oneVideoAtATimePlease();
 
    
   }, {once:false}) 
@@ -287,15 +275,7 @@ $('audio,video').bind('play', function() {
 
 
 //html5 - prevent simultaneous video playback - pauses other playing videos upon play
-$('audio,video').bind('play', function() {
-    activated = this;
-          $('audio,video').each(function() {
-              if(this != activated) this.remove();
-            });
-      $('video').on('ended',function(){
-      this.remove();
-    });
-  });
+oneVideoAtATimePlease();
 
     
   }, {once:false}) 
