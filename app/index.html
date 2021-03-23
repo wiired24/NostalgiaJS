@@ -12,8 +12,8 @@
     <title>NostalgiaJS</title>
 </head>
 <body style="background-color:mintcream">
-<img style="position: fixed; z-index: -1;" src="bg.jpg" id="background" alt="">
-  
+<img width="1920" height="1080" style="position: fixed; z-index: -1;" src="bg.jpg" id="background" alt="">
+
 </body>
 <script>window.$ = window.jQuery = require('jquery');</script>
 <script src="materialize.min.js"></script>
@@ -40,9 +40,9 @@
 
 
 window.addEventListener('DOMContentLoaded',(e) => {
-  
+
   ipcRenderer.send('steam-start', {
-    
+
 })
 
 ipcRenderer.send('settings-start', {
@@ -67,7 +67,7 @@ ipcRenderer.on('settings:update',(e,args) => {
 })
 
 
-/*Steam Specific Logic goes here*/  
+/*Steam Specific Logic goes here*/
 
   ipcRenderer.on('steam-start', (e,args) => {
   let new_arr = Array.from(args.split('\n'))
@@ -77,11 +77,11 @@ ipcRenderer.on('settings:update',(e,args) => {
   SteamImage.src = SteamGameFile.image;
   SteamImage.setAttribute('width',175)
   SteamImage.setAttribute('height',200)
-  SteamImage.classList.add('game-space')
+  SteamImage.classList.add('container')
   document.body.appendChild(SteamImage)
-  
 
-  
+
+
 var SteamVideoArray = [];
 // Add a video preview when a game title is being hovered over
 SteamImage.addEventListener('mouseover', e => {
@@ -100,12 +100,12 @@ document.body.appendChild(SteamVideoPreview)
 oneVideoAtATimePlease();
 
 
-}, {once:false}) 
+}, {once:false})
 
 
 
  // If game is launched, lets tell IPC Main about it
- SteamImage.addEventListener('click', e => { 
+ SteamImage.addEventListener('click', e => {
   const SteamTitle = SteamGameFile.name
   const SteamAppID = SteamGameFile.appID
   const Steam = 'steam'
@@ -114,22 +114,22 @@ ipcRenderer.send('steam-game:launch', {
   SteamTitle,
   SteamCommand,
   Steam
-  
+
       })
     })
    });
-  
+
   })
 })
 
 /*Rom/Emulator specific logic starts here*/
 
 
-// On page load, let's load all of the users games 
+// On page load, let's load all of the users games
 window.addEventListener('DOMContentLoaded', (e) => {
     ipcRenderer.send('start', {
-    
-      
+
+
     })
 
 
@@ -142,9 +142,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
         image.src = gamefile.image;
         image.setAttribute('width',175)
         image.setAttribute('height',200)
-        image.classList.add('game-space')
+        image.classList.add('container')
         document.body.appendChild(image)
-    
+
     var videoArray = [];
     // Add a video preview when a game title is being hovered over
     image.addEventListener('mouseover', e => {
@@ -162,7 +162,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 oneVideoAtATimePlease();
 
 
-  }, {once:false}) 
+  }, {once:false})
 
 
 // Listen for a click event, send data to IPC Main
@@ -179,12 +179,12 @@ oneVideoAtATimePlease();
     })
   })
 });
-      
-      
+
+
     })
 })
 
-// Once the game has been added we want to create a game image from the image path that was 
+// Once the game has been added we want to create a game image from the image path that was
 // recieved from args and append it to the mainwindow
 ipcRenderer.on('game:added', (e,args) => {
   gameFile = JSON.parse(args.gameDataJSON)
@@ -192,10 +192,10 @@ ipcRenderer.on('game:added', (e,args) => {
   image.src = gameFile.image
   image.setAttribute('width',175)
   image.setAttribute('height',200)
-  image.classList.add('game-space')
+  image.classList.add('container')
   document.body.appendChild(image)
 
-  // If user clicks on a game image, lets send the name of the game back to IPC main where  
+  // If user clicks on a game image, lets send the name of the game back to IPC main where
   // it can be launched
   image.addEventListener('click', e => {
     const romPath = gameFile.rom
@@ -207,10 +207,10 @@ ipcRenderer.on('game:added', (e,args) => {
       emuPath,
       wine,
       Retroarch
-      
+
     })
   })
- 
+
     // Add a video preview when a game title is being hovered over
     image.addEventListener('mouseover', e => {
     image.classList.add('pointer')
@@ -225,8 +225,8 @@ ipcRenderer.on('game:added', (e,args) => {
 //html5 - prevent simultaneous video playback - pauses other playing videos upon play
 oneVideoAtATimePlease();
 
-   
-  }, {once:false}) 
+
+  }, {once:false})
 
 // Display notification alerting user that their game has been added
          M.toast({
@@ -234,14 +234,14 @@ oneVideoAtATimePlease();
          })
        })
 
-  
+
     ipcRenderer.on('steam-game:added', (e,args) => {
       SteamGameFile = JSON.parse(args.SteamGameDataJSON)
       const SteamImage = document.createElement('img')
       SteamImage.src = SteamGameFile.image
       SteamImage.setAttribute('width',175)
       SteamImage.setAttribute('height',200)
-      SteamImage.classList.add('game-space')
+      SteamImage.classList.add('container')
       document.body.appendChild(SteamImage)
 
 
@@ -255,7 +255,7 @@ oneVideoAtATimePlease();
       SteamTitle,
       SteamCommand,
       Steam,
-      
+
     })
   })
 
@@ -277,12 +277,12 @@ oneVideoAtATimePlease();
 //html5 - prevent simultaneous video playback - pauses other playing videos upon play
 oneVideoAtATimePlease();
 
-    
-  }, {once:false}) 
-  
+
+  }, {once:false})
+
 
 })
 
-      
+
 </script>
 </html>

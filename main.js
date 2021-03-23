@@ -32,8 +32,8 @@ function createMainWindow() {
     const { width, height } = screen.getPrimaryDisplay().workAreaSize
     mainWindow = new BrowserWindow({
         title: `NostalgiaJS`,
-        width: 1280,
-        height: 720,
+        width: 1920,
+        height: 1080,
         icon: `${__dirname}/assets/icons/Icon_256x256.png`,
         resizable: onDev ? false: false,
         frame:true,
@@ -114,9 +114,9 @@ function createSettingsWindow() {
 // on 'Ready' lets execute createMainWindow
 
 app.on('ready', () => {
-   
+
     createMainWindow()
-  
+
 
     // Let's build the main menu from the menu array defined below
     const mainMenu = Menu.buildFromTemplate(menu)
@@ -134,7 +134,7 @@ const menu = [
                 click () {
                     createAddRomsWindow()
                 }
-                
+
             },
             {
                 label: 'Add Steam Game',
@@ -152,11 +152,11 @@ const menu = [
             },
             {
                  role: 'quit',
-                 icon: `${__dirname}/assets/icons/quit.png` 
+                 icon: `${__dirname}/assets/icons/quit.png`
             }
         ]
     },
-    
+
 // On Developer Mode let's show a custom menu that's useful for app development
     ...(onDev
         ? [
@@ -198,7 +198,7 @@ const menu = [
         ]
     }
 ]: []),
-   
+
 ]
 
 // if User is adding a game lets call createConfig
@@ -233,20 +233,20 @@ ipcMain.on('settings:add', (e,args) => {
 
 ipcMain.on('settings-start',(e,args) => {
     recursive(`${__dirname}/settings`,function(err,files) {
-        
+
 
         // Map over every file & read contents
         files.map(function(gamePath) {
         if (gamePath.includes('.json')) {
             lineReader.eachLine(gamePath,function(line,last) {
-               
-                
-                
+
+
+
                 mainWindow.webContents.send('settings-start',line)
             })
         }
-    }) 
-      
+    })
+
  })
 })
 
@@ -254,20 +254,20 @@ ipcMain.on('settings-start',(e,args) => {
 // currently saved and send it to the render process so they can be appended to the DOM
 ipcMain.on('start', (e,args) => {
     recursive(`${__dirname}/games`,function(err,files) {
-        
+
 
         // Map over every file & read contents
         files.map(function(gamePath) {
         if (gamePath.includes('.json')) {
             lineReader.eachLine(gamePath,function(line,last) {
-               
-                
-                
+
+
+
                 mainWindow.webContents.send('start',line)
             })
         }
-    }) 
-      
+    })
+
  })
 })
 
@@ -275,20 +275,20 @@ ipcMain.on('start', (e,args) => {
 // steam files to the render process to then be iterated over and processed on the page.
 ipcMain.on('steam-start', (e,args) => {
     recursive(`${__dirname}/steam/games`,function(err,files) {
-        
+
 
         // Map over every file & read contents
         files.map(function(gamePath) {
         if (gamePath.includes('.json')) {
             lineReader.eachLine(gamePath,function(line,last) {
-               
-                
-                
+
+
+
                 mainWindow.webContents.send('steam-start',line)
             })
         }
-    }) 
-      
+    })
+
  })
 })
 
@@ -304,7 +304,7 @@ function loadConfig({romPath,emuPath,wine,Retroarch}) {
     let launch = '-L'
     let RetroarchPath = [launch,emuPath,romPath]
 
-    
+
 
     // If platform is Linux, let's support launching emulators via WINE
     if (onLinux && executablePath.includes('.exe')) {
@@ -326,7 +326,7 @@ function loadConfig({romPath,emuPath,wine,Retroarch}) {
         });
     }
 
-    
+
     // If launching a Retroarch Libretro core let's do this
     if (executablePath.includes('libretro')) {
         console.log('working...')
@@ -376,8 +376,8 @@ function createConfig({gameDataJSON}) {
 
 
    AddRomsWindow.webContents.send('game:added')
-  
-   
+
+
 }
 
 function createSteamConfig({SteamGameDataJSON}) {
@@ -405,7 +405,7 @@ function writeSettings({SettingsJSON}) {
     });
 
     SettingsWindow.webContents.send('settings:added')
-   
+
 }
 
 

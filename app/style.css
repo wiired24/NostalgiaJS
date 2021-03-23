@@ -1,14 +1,15 @@
 .container {
-	width: 400px;
+	max-width: 400px;
 	margin-top: 70px;
+	left: 600px;
 	padding: 0 20px;
 }
 
 .video-position {
-	margin-top: 190px;
+	margin-top: 490px;
 	padding: auto;
-	position:absolute; top: 200px; left: 950px;
-	
+	position:absolute; top: 200px; left: 1600px;
+
 }
 
 .game-space {
