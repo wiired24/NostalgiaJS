@@ -5,13 +5,18 @@ NostalgiaJS - The Fast,Simple, Open Source Gaming Front-End
 ![Alt Text](https://media2.giphy.com/media/05ImeYoOwKVdw2S7b7/giphy.gif)
 
 # Installation
-Make sure you have NodeJS & NPM installed on your machine.
+The installation process is pretty straight-forward. Just run these commands in your terminal
+<pre><code class="hljs language-shell">$ git clone https://github.com/wiired24/NostalgiaJS.git
+</code></pre>
 <br>
-To check you can run `node --version` & `npm --version`.
+<pre><code class="hljs language-shell">cd NostalgiaJS
+</code></pre>
 <br>
-Once the repo is cloned, run `npm install` to install dependencies.
+<pre><code class="hljs language-shell">npm install
+</code></pre>
 <br>
-When that is finished, run `npm run start` to start Nostalgia
+<pre><code class="hljs language-shell">npm run start
+</code></pre>
 
 # Release Builds
 Currently both Linux and MacOS are supported. In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`. After compiling is finished you will see a new directory called 
