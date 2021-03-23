@@ -2,7 +2,7 @@
 NostalgiaJS - The Fast,Simple, Open Source Gaming Front-End
 <img width="32" height="32" src="https://i.imgur.com/UQz3tN9.png">
 <br>
-![Alt Text](https://media2.giphy.com/media/05ImeYoOwKVdw2S7b7/giphy.gif)
+![Alt Text](https://i.imgur.com/fDSwEKA.png)
 
 # Installation
 The installation process is pretty straight-forward. Just run these commands in your terminal
@@ -25,7 +25,7 @@ Currently both Linux and MacOS are supported. In order to compile a release buil
 # Usage
 As you can see adding games to NostalgiaJS is very straight-forward and easy to do 👍
 <br>
-![Alt Text](https://media2.giphy.com/media/SP0KlPJ9ns2I81r6OG/giphy.gif)
+![Alt Text](https://media4.giphy.com/media/a97J5R43YfWS0jGnqO/giphy.gif)
 
 NostalgiaJS currently allows both steam games and emulators to be imported. It's as simple as selecting `import rom` or `import steam game` in the file menu, adding the required files, and then launching your game. That's all you have to do. Please note if you're importing a steam game to your collection you will need the AppID of that title. This can easily be found for free on steam.db.info. 
 
@@ -35,13 +35,15 @@ Removing games is also straightforward as well. Just navigate to where Nostalgia
 on your computer and locate the `/games` or `/steam/games` folder, and remove the data.json file. This will remove it from NostalgiaJS
 
 # Features
-Currently NostalgiaJS supports both steam games and emulators as well. NostalgiaJS has `built in support` for both standalone emulator binaries and `libretro retroarch cores` as well. NostalgiaJS comes with some of the most popular libretro cores already included by default. Just search in `/NostalgiaJS/libretro/cores` when importing your rom file to your collection. In addtion, you can also
-use Windows .exe files for standalone emulators as Wine is supported by default just make sure you have it installed. It also has support for `custom box art` and `video previews`. 
+Currently NostalgiaJS supports both steam games and emulators as well. NostalgiaJS has `built in support` for both standalone emulator binaries and `libretro retroarch cores` as well. NostalgiaJS comes with some of the most popular libretro cores already included by default. Just search in `/NostalgiaJS/libretro/cores` when importing your rom file to your collection. In addtion, you can also use Windows .exe files for standalone emulators as Wine is supported by default just make sure you have it installed. It also has support for `custom box art` and `video previews`. 
+
+Oh yeah did I mention NostalgiaJS also supports custom backgrounds too?
+![Alt Text](https://i.imgur.com/zcC8UMf.png)
 
 # Scraping 
 If you have a larger collection of rom files it's recommended to use a scraper to fetch media files for you games. In which case you can take advantage of the default scraper (skyscraper) that NostalgiaJS has to offer. Just run the `setupScraper` script once to install dependencies and then you only need to run `scrape.sh` when you want to scrape metadata for your games. A media folder will be created containing images and videos for your games after scraping has finished.
 
-![Alt Text](https://i.imgur.com/by30Sxd.png)
+![Alt Text](https://i.imgur.com/K5cKwxN.png)
 
 # Why NostalgiaJS?
 NostalgiaJS was created as I wanted to create a viable open source alternative for those looking for an experience that is similar to something like launchbox on windows, that was instead built natively for the linux/Unix desktop. Rather than trying to have every feature ever, It was designed to be minimal, fast, easy to use, customizeable, and above all fun. It's still early in development so some things may occasionally break and it may not have x feature impleneted yet. I do think at this point it's stable enough for general use. However you can expect various features and bug fixes to be added as development continues. Also, because it's written in Javascript with NodeJS and uses Libretro cores it's very fast. Emulators typically launch within just 0.5 - 1 second in my own tests. 
