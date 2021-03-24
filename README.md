@@ -33,9 +33,9 @@ NostalgiaJS currently allows both steam games and emulators to be imported. It's
 
 
 # Features
-Currently NostalgiaJS supports both steam games and emulators as well. NostalgiaJS has `built in support` for both standalone emulator binaries and `libretro retroarch cores` as well. NostalgiaJS comes with some of the most popular libretro cores already included by default. Just search in `/NostalgiaJS/libretro/cores` when importing your rom file to your collection. In addtion, you can also use Windows .exe files for standalone emulators as Wine is supported by default just make sure you have it installed. I am currently working on getting gamepad support working. It's not fully implemeneted just yet but it will come when it's ready. Currently NostalgiaJS can detect if a gamepad is present and will let you know if one is connected. The emulators/steam games will let you use your gamepad just fine but the User Interface in Nostalgia doesn't currently allow for menu navigation with a gamepad. I plan to change that in the future.
+Currently NostalgiaJS supports both steam games and emulators as well. NostalgiaJS has `built in support` for both standalone emulator binaries and `libretro retroarch cores` as well. NostalgiaJS comes with some of the most popular libretro cores already included by default. Just search in `/NostalgiaJS/libretro/cores` when importing your rom file to your collection. In addtion, you can also use Windows .exe files for standalone emulators as Wine is supported by default just make sure you have it installed. 
 
-# Custom Backgrounds
+
 Oh yeah did I mention NostalgiaJS also supports custom backgrounds too? :)
 ![Alt Text](https://i.imgur.com/zcC8UMf.png)
 
@@ -52,6 +52,9 @@ Don't just take my word for it. Here's how fast NostalgiaJS can load games with 
 
 # Troubleshooting
 While NostalgiaJS is generally considered stable enough for use at this point, if you do come across a bug please let me know about it by submitting an issue on Github and I will look into it. Some common things to be aware of. If you're launching a game on mac or linux that requires a .exe emulator file, make sure you have wine installed on your machine. If you are loading a libretro core, make sure that you have the proper file which should be a `<platform-name>libretro.so file` and that you have retroarch installed on your machine. Also if a libretro core doesn't load it's most likely because of a missing bios file on your system. Dolphin is one example that comes to mind where a Bios might be required. If you're using a standalone emulator binary to launch a rom, and the emulator won't launch or doesn't start it may just be an issue with that specific emulator in which case I'd recommend trying the libretro core equivalent instead. 
+
+# A Note on Gamepads
+I am currently working on getting gamepad support working. It's not fully implemeneted just yet but it will come when it's ready. Currently NostalgiaJS can detect if a gamepad is present and will let you know if one is connected. The emulators/steam games will let you use your gamepad just fine but the User Interface in Nostalgia doesn't currently allow for menu navigation with a gamepad. I plan to change that in the future.
 
 # Further Documentation
 We now have an Official Wiki which documents in detail just about everything you need to know to get up and running with NostalgiaJS. You can view it here. ![Go to Wiki](https://github.com/wiired24/NostalgiaJS/wiki) <br>Please keep in mind that the Wiki is being actively worked on so new pages may be added in the future. 
