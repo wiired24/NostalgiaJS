@@ -31,8 +31,6 @@ NostalgiaJS currently allows both steam games and emulators to be imported. It's
 
 ![Alt Text](https://media3.giphy.com/media/hyJJeraLb0M0SvWffJ/giphy.gif)
 
-Removing games is also straightforward as well. Just navigate to where NostalgiaJS is installed
-on your computer and locate the `/games` or `/steam/games` folder, and remove the data.json file. This will remove it from NostalgiaJS
 
 # Features
 Currently NostalgiaJS supports both steam games and emulators as well. NostalgiaJS has `built in support` for both standalone emulator binaries and `libretro retroarch cores` as well. NostalgiaJS comes with some of the most popular libretro cores already included by default. Just search in `/NostalgiaJS/libretro/cores` when importing your rom file to your collection. In addtion, you can also use Windows .exe files for standalone emulators as Wine is supported by default just make sure you have it installed. It also has support for `custom box art` and `video previews`. 
