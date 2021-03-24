@@ -111,6 +111,20 @@ function createSettingsWindow() {
     //SteamWindow.setMenu(null)
 }
 
+function createRemoveGameWindow() {
+    RemoveGameWindow = new BrowserWindow({
+        title: 'Remove Game',
+        width: 800,
+        height: 600,
+        resizable: false,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false
+        }
+    })
+    RemoveGameWindow.loadFile('./app/remove-game.html')
+}
+
 // on 'Ready' lets execute createMainWindow
 
 app.on('ready', () => {
@@ -151,8 +165,15 @@ const menu = [
                 }
             },
             {
-                 role: 'quit',
-                 icon: `${__dirname}/assets/icons/quit.png`
+                 label: 'Remove Game',
+                 icon: `${__dirname}/assets/icons/remove.png`,
+                 click() {
+                     createRemoveGameWindow()
+                 }
+            },
+            {
+                role: 'Quit',
+                icon: `${__dirname}/assets/icons/quit.png`
             }
         ]
     },
@@ -292,6 +313,11 @@ ipcMain.on('steam-start', (e,args) => {
  })
 })
 
+ipcMain.on('game:delete',(e,args) => {
+    removeGame(args);
+    //RemoveGameWindow.webContents.send('game:deleted',args)
+})
+
 
 
 // loadconfig calls child. Child takes the rompath/emuPath and launches the executable
@@ -406,6 +432,26 @@ function writeSettings({SettingsJSON}) {
 
     SettingsWindow.webContents.send('settings:added')
 
+}
+
+// Takes a file, gets the game folders path, rmdir removes the directory and all sub-folders
+function removeGame({deleted}) {
+    try {
+    let pathToDeletedGame = deleted
+    gameFolder = pathToDeletedGame.split('/configs');
+    let pathToGameFolder = gameFolder[0].toString()
+    fs.rmdir(pathToGameFolder, {recursive:true}, (err) => {
+        if (err) {
+            throw err;
+        }
+        console.log(`${pathToGameFolder} has been removed`)
+        app.relaunch();
+        app.exit();
+    })
+    
+    } catch(err) {
+        console.log(err)
+    }
 }
 
 
