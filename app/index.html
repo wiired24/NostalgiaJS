@@ -17,12 +17,20 @@
 </body>
 <script>window.$ = window.jQuery = require('jquery');</script>
 <script src="materialize.min.js"></script>
+<script src="./gamecontroller.min.js"></script>
 <script>
         const path = require('path')
         const os = require('os')
         const { ipcRenderer } = require('electron')
         const recursive = require('recursive-readdir');
         const {app,BrowserWindow} = require('electron');
+
+  // Check to see if GamePad is connected
+  gameControl.on('connect', function(gamepad) {
+    M.toast({
+           html: `Gamepad is Connected`
+         })
+  })
 
   // Global Func, stops video playback for all other videos that aren't selected.
   function oneVideoAtATimePlease() {
