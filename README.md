@@ -35,7 +35,8 @@ NostalgiaJS currently allows both steam games and emulators to be imported. It's
 # Features
 Currently NostalgiaJS supports both steam games and emulators as well. NostalgiaJS has `built in support` for both standalone emulator binaries and `libretro retroarch cores` as well. NostalgiaJS comes with some of the most popular libretro cores already included by default. Just search in `/NostalgiaJS/libretro/cores` when importing your rom file to your collection. In addtion, you can also use Windows .exe files for standalone emulators as Wine is supported by default just make sure you have it installed. I am currently working on getting gamepad support working. It's not fully implemeneted just yet but it will come when it's ready. Currently NostalgiaJS can detect if a gamepad is present and will let you know if one is connected. The emulators/steam games will let you use your gamepad just fine but the User Interface in Nostalgia doesn't currently allow for menu navigation with a gamepad. I plan to change that in the future.
 
-Oh yeah did I mention NostalgiaJS also supports custom backgrounds too?
+# Custom Backgrounds
+Oh yeah did I mention NostalgiaJS also supports custom backgrounds too? :)
 ![Alt Text](https://i.imgur.com/zcC8UMf.png)
 
 # Scraping 
