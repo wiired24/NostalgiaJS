@@ -10,6 +10,7 @@ const readline = require('readline')
 const child = require('child_process').execFile;
 const recursive = require('recursive-readdir');
 const lineReader = require('line-reader')
+require('v8-compile-cache')
 
 // Import the necessary dependencies for Electron
 const {app, BrowserWindow, Menu, ipcMain, shell, dialog, screen} = require('electron');
