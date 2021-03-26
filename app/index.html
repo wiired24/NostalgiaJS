@@ -40,6 +40,12 @@
   });
 }
 
+// Stops all videos. Used for when a game is launched so we don't have the video preview playing over
+// the emulator because that would be annoying and nobody wants that 
+function stopAllVideos() {
+  document.querySelectorAll('video').forEach(vid => vid.pause());
+}
+
 
 
 window.addEventListener('DOMContentLoaded',(e) => {
@@ -109,6 +115,7 @@ oneVideoAtATimePlease();
 
  // If game is launched, lets tell IPC Main about it
  SteamImage.addEventListener('click', e => {
+   stopAllVideos();
   const SteamTitle = SteamGameFile.name
   const SteamAppID = SteamGameFile.appID
   const Steam = 'steam'
@@ -170,6 +177,7 @@ oneVideoAtATimePlease();
 
 // Listen for a click event, send data to IPC Main
   image.addEventListener('click', e => {
+    stopAllVideos();
     const romPath = gamefile.rom;
     const emuPath = gamefile.emulator;
     const wine = 'wine'
@@ -201,6 +209,7 @@ ipcRenderer.on('game:added', (e,args) => {
   // If user clicks on a game image, lets send the name of the game back to IPC main where
   // it can be launched
   image.addEventListener('click', e => {
+    stopAllVideos();
     const romPath = gameFile.rom
     const emuPath = gameFile.emulator
     const wine = 'wine'
@@ -250,6 +259,7 @@ oneVideoAtATimePlease();
 
    // If game is launched, lets tell IPC Main about it
     SteamImage.addEventListener('click', e => {
+      stopAllVideos();
       const SteamTitle = SteamGameFile.name
       const SteamAppID = SteamGameFile.appID
       const Steam = 'steam'
