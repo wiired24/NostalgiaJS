@@ -9,7 +9,7 @@ NostalgiaJS - The Fast,Simple, Open Source Gaming Front-End
 
 The installation process is pretty straight-forward. Just run these commands in your terminal
 
-<pre><code class="hljs language-shell">$ git clone https://github.com/wiired24/NostalgiaJS.git
+<pre><code class="hljs language-shell">git clone https://github.com/wiired24/NostalgiaJS.git
 </code></pre>
 <br>
 <pre><code class="hljs language-shell">cd NostalgiaJS
