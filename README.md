@@ -52,7 +52,7 @@ If you have a larger collection of rom files it's recommended to use a scraper t
 
 # Why NostalgiaJS?
 
-NostalgiaJS was created as I wanted to create a viable open source alternative for those looking for an experience that is similar to something like launchbox on windows, that was instead built natively for the linux/Unix desktop. Rather than trying to have every feature ever, It was designed to be minimal, fast, easy to use, customizeable, and above all fun. I do think at this point it's stable enough for general use. However you can expect various features and bug fixes to be added as development continues.
+NostalgiaJS was created as I wanted to create a viable open source alternative for those looking for an experience that is similar to something like launchbox on windows, that was instead built with the linux/Unix in mind. Rather than trying to have every feature ever, It was designed to be minimal, fast, easy to use, customizeable, and above all fun. I do think at this point it's stable enough for general use. However you can expect various features and bug fixes to be added as development continues.
 
 ![Alt Text](https://media2.giphy.com/media/1AJNfJIAKWe3XKM0lL/giphy.gif)
 
