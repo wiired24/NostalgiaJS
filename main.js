@@ -109,7 +109,7 @@ function createSettingsWindow() {
         }
     })
     SettingsWindow.loadFile('./app/settings.html')
-    //SteamWindow.setMenu(null)
+    SteamWindow.setMenu(null)
 }
 
 function createRemoveGameWindow() {

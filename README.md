@@ -23,8 +23,7 @@ The installation process is pretty straight-forward. Just run these commands in 
 
 # Release Builds
 
-Currently both Linux and MacOS are supported. In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`. After compiling is finished you will see a new directory called
-`/release-builds` there you can find binaries for your target platform. Please note that although Windows support may come at a later time, for the time being it's not the main focus. In fact Nostalgia is an alternative to popular front-ends launchers that already exist for the Windows Platform.
+Currently both Linux and MacOS are supported. In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`. After compiling is finished you will see a new directory called `/release-builds` there you can find binaries for your target platform.  
 
 # Usage
 
@@ -39,7 +38,7 @@ NostalgiaJS currently allows both steam games and emulators to be imported. It's
 # Features
 
 Currently NostalgiaJS supports both steam games and emulators as well. NostalgiaJS has `built in support` for both standalone emulator binaries and `libretro retroarch cores` as well. NostalgiaJS comes with some of the most popular libretro cores already included by default. Just search in `/NostalgiaJS/libretro/cores` when importing your rom file to your collection. In addtion, you can also use Windows .exe files for standalone emulators as Wine is supported by default just make sure you have it installed. NostalgiaJS is also very fast. It uses compile time V8 optimizations that help it startup in typically just less than a second, even when you have several games in your library. In addition the default Cores included with NostalgiaJS load fast as well since they are written in C. In order to take advantage of these optimizations just make sure you run `npm run package-linux` or `npm run package-mac` to compile a release build
-depending on what operating system you are on. 
+depending on what operating system you are on.
 
 Oh yeah did I mention NostalgiaJS also supports custom backgrounds too? :)
 ![Alt Text](https://i.imgur.com/zcC8UMf.png)
@@ -52,7 +51,7 @@ If you have a larger collection of rom files it's recommended to use a scraper t
 
 # Why NostalgiaJS?
 
-NostalgiaJS was created as I wanted to create a viable open source alternative for those looking for an experience that is similar to something like launchbox on windows, that was instead built with the linux/Unix in mind. Rather than trying to have every feature ever, It was designed to be minimal, fast, easy to use, customizeable, and above all fun. I do think at this point it's stable enough for general use. However you can expect various features and bug fixes to be added as development continues.
+NostalgiaJS was created as I wanted to create a viable open source alternative for those looking for an experience that is similar to something like launchbox on windows, that was instead built for *nix operating systems. I wanted a launcher that had a high degree of compatilibity with multiple emulators and just worked out of the box. Instead of a launcher having install scripts for emulators that break because x,y or z dependency, NostalgaiJS takes a different approarch. You just supply the binary. That can be a .exe emulator launched via Wine, a libretro core, or a native emulator. And Rather than trying to have every feature ever, It was designed to be minimal, fast, easy to use, customizeable, and above all fun.
 
 ![Alt Text](https://media2.giphy.com/media/1AJNfJIAKWe3XKM0lL/giphy.gif)
 
