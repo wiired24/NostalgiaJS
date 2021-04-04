@@ -23,7 +23,7 @@ The installation process is pretty straight-forward. Just run these commands in 
 
 # Release Builds
 
-Currently both Linux and MacOS are supported. In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`. After compiling is finished you will see a new directory called `/release-builds` there you can find binaries for your target platform.
+Currently both Linux and MacOS are supported. In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`. If you are on a newer M1 based Mac you can use the build script that is optimized for arm64. Just type `npm run package-arm64-mac` to generate a build. After compiling is finished you will see a new directory called `/release-builds` there you can find binaries for your target platform.
 
 # Usage
 
@@ -37,8 +37,7 @@ NostalgiaJS currently allows both steam games and emulators to be imported. It's
 
 # Features
 
-Currently NostalgiaJS supports both steam games and emulators as well. NostalgiaJS has `built in support` for both standalone emulator binaries and `libretro retroarch cores` as well. NostalgiaJS comes with some of the most popular libretro cores already included by default. Just search in `/NostalgiaJS/libretro/cores` when importing your rom file to your collection. In addtion, you can also use Windows .exe files for standalone emulators as Wine is supported by default just make sure you have it installed. NostalgiaJS is also very fast. It uses compile time V8 optimizations that help it startup in typically just less than a second, even when you have several games in your library. In addition the default Cores included with NostalgiaJS load fast as well since they are written in C. In order to take advantage of these optimizations just make sure you run `npm run package-linux` or `npm run package-mac` to compile a release build
-depending on what operating system you are on.
+Currently NostalgiaJS supports both steam games and emulators as well. NostalgiaJS has `built in support` for both standalone emulator binaries and `libretro retroarch cores` as well. NostalgiaJS comes with some of the most popular libretro cores already included by default. Just search in `/NostalgiaJS/libretro/cores` when importing your rom file to your collection. In addtion, you can also use Windows .exe files for standalone emulators as Wine is supported by default just make sure you have it installed. NostalgiaJS is also very fast. It uses compile time V8 optimizations that help it startup in typically just less than a second, even when you have several games in your library. In addition the default Cores included with NostalgiaJS load fast as well since they are written in C. In order to take advantage of these optimizations just make sure you run `npm run package-linux` or `npm run package-mac` to compile a release build depending on what operating system you are on.
 
 Oh yeah did I mention NostalgiaJS also supports custom backgrounds too? :)
 ![Alt Text](https://i.imgur.com/zcC8UMf.png)
