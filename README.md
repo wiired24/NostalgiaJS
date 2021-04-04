@@ -23,7 +23,7 @@ The installation process is pretty straight-forward. Just run these commands in 
 
 # Release Builds
 
-Currently both Linux and MacOS are supported. In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`. After compiling is finished you will see a new directory called `/release-builds` there you can find binaries for your target platform.  
+Currently both Linux and MacOS are supported. In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`. After compiling is finished you will see a new directory called `/release-builds` there you can find binaries for your target platform.
 
 # Usage
 
@@ -51,7 +51,7 @@ If you have a larger collection of rom files it's recommended to use a scraper t
 
 # Why NostalgiaJS?
 
-NostalgiaJS was created as I wanted to create a viable open source alternative for those looking for an experience that is similar to something like launchbox on windows, that was instead built for *nix operating systems. I wanted a launcher that had a high degree of compatilibity with multiple emulators and just worked out of the box. Instead of a launcher having install scripts for emulators that break because x,y or z dependency, NostalgiaJS takes a different approarch. You just supply the binary. That can be a .exe emulator launched via Wine, a libretro core, or a native emulator. And Rather than trying to have every feature ever, It was designed to be minimal, fast, easy to use, customizeable, and above all fun.
+NostalgiaJS was created as I wanted to create a viable open source alternative for those looking for an experience that is similar to something like launchbox on windows, that was instead built for \*nix operating systems. I wanted a launcher that had a high degree of compatilibity with multiple emulators and just worked out of the box. Instead of a launcher having install scripts for emulators that break because x,y or z dependency, NostalgiaJS takes a different approarch. You just supply the binary. That can be a .exe emulator launched via Wine, a libretro core, or a native emulator. And Rather than trying to have every feature ever, It was designed to be minimal, fast, easy to use, customizeable, and above all fun.
 
 ![Alt Text](https://media2.giphy.com/media/1AJNfJIAKWe3XKM0lL/giphy.gif)
 
