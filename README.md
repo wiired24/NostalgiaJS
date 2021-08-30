@@ -23,7 +23,7 @@ The installation process is pretty straight-forward. Just run these commands in 
 
 # Release Builds
 
-NostalgiaJS supports all three major operating systems Linux, MacOS, and Windows 10 are supported. In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`. If you are on a newer M1 based Mac you can use the build script that is optimized for arm64. Just type `npm run package-arm64-mac` to generate a build. After compiling is finished you will see a new directory called `/release-builds` there you can find binaries for your target platform. Lastly if you're on Windows 10, release builds can be made if desired just run `npm run package-win`. Please be aware if you're using Windows 10 you will need to add steam & retroarch to your System Path since it's not done automatically. 
+NostalgiaJS supports all three major operating systems Linux, MacOS, and Windows 10 are supported. In order to compile a release build you will need to run `npm run package-linux` or `npm run package-mac`. If you are on a newer M1 based Mac you can use the build script that is optimized for arm64. Just type `npm run package-arm64-mac` to generate a build.  Lastly if you're on Windows 10, release builds can be made if desired just run `npm run package-win`. After compiling is finished you will see a new directory called `/release-builds` there you can find binaries for your target platform. Please be aware if you're using Windows 10 you will need to add steam & retroarch to your System Path since it's not done automatically. 
 
 # Usage
 
