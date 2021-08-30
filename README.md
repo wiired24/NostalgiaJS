@@ -27,7 +27,8 @@ NostalgiaJS supports all three major operating systems Linux, MacOS, and Windows
 
 # Usage
 
-As you can see adding games to NostalgiaJS is very straight-forward and easy to do 👍
+As you can see adding games to NostalgiaJS is very straight-forward and easy to do<br>
+it's really as simple as the click of a button 👍
 <br>
 ![Alt Text](https://media4.giphy.com/media/a97J5R43YfWS0jGnqO/giphy.gif)
 
