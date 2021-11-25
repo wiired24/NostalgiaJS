@@ -329,6 +329,8 @@ function loadConfig({romPath,emuPath,wine,Retroarch}) {
     let launchWithWine = wine;
     let laucnhWithRetroarch = 'retroarch';
     let launch = '-L'
+    let launchWithXemu = '-dvd_path';
+    let XboxPath = [launchWithXemu,romPath];
     let RetroarchPath = [launch,emuPath,romPath]
 
 
@@ -359,6 +361,17 @@ function loadConfig({romPath,emuPath,wine,Retroarch}) {
         console.log('working...')
         //console.log(combinedPath)
         child(laucnhWithRetroarch,RetroarchPath, function(err,data) {
+            if(err) {
+                console.log(err)
+            }
+            console.log(data.toString());
+        });
+    }
+
+    // If launching XEMU (Xbox Emulator) We need to add an additional arg
+    if (executablePath.includes('xemu')) {
+        console.log('Xbox GAME...');
+        child(executablePath,XboxPath, function(err,data) {
             if(err) {
                 console.log(err)
             }
